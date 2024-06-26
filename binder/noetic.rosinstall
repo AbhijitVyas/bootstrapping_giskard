@@ -60,7 +60,6 @@
 - git:
     local-name: mujoco_sim
     uri: https://github.com/HoangGiang93/mujoco_sim.git
-
 - git:
     local-name: task_learning_rviz
     uri: https://github.com/AbhijitVyas/task_learning_experiment.git
