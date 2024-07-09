@@ -61,12 +61,6 @@
     local-name: mujoco_sim
     uri: https://github.com/HoangGiang93/mujoco_sim.git
 - git:
-    local-name: task_learning_experiment
-    uri: https://github.com/AbhijitVyas/task_learning_experiment.git
-- git:
-    local-name: iai_apartment_neem_rendering
-    uri: https://github.com/AbhijitVyas/iai_apartment_neem_rendering.git
-- git:
     local-name: bielefeld_study_neem
     uri: https://github.com/AbhijitVyas/bielefeld_study_neem.git
 
