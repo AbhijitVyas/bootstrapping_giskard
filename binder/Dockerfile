@@ -183,7 +183,7 @@ RUN mkdir /neem_data && chown ${NB_USER}:users /neem_data
 USER ${NB_USER}
 RUN cd /neem_data && \
     ln -s /neem_data ${HOME}/bootstrapping_giskard/lectures/data && \
-    wget https://seafile.zfn.uni-bremen.de/f/c0c437851a284ae092c8/?dl=1 -O example_neem.zip && \
+    wget https://nc.uni-bremen.de/index.php/s/NdCtKtGbzmTG4sf -O example_neem.zip && \
     unzip example_neem.zip && \
     mv example_neem/* ./ && \
     rm -r example_neem example_neem.zip
