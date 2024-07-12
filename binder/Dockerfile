@@ -188,6 +188,9 @@ RUN cd /neem_data && \
     mv example_neem/* ./ && \
     rm -r example_neem example_neem.zip
 
+RUN pip install sos-notebook sos-python
+RUN jupyter labextension install jupyterlab-sos \
+
 # jupyterlab interface configuration
 COPY --chown=${NB_USER}:users binder/jupyter-settings.json /opt/conda/share/jupyter/lab/settings/overrides.json
 # COPY --chown=${NB_USER}:users binder/webapps.json ${ROS_WS}/src/rvizweb/webapps/app.json
