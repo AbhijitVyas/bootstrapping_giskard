@@ -188,8 +188,14 @@ RUN cd /neem_data && \
     mv example_neem/* ./ && \
     rm -r example_neem example_neem.zip
 
-RUN pip install sos-notebook sos-python
-RUN jupyter labextension install jupyterlab-sos \
+# linraries for querying neem and displaying it
+#RUN pip install
+#RUN pip install
+
+# libraries for querying the knowledge graph
+RUN pip install sos-notebook sos-python sos-papermill sos-r
+RUN python -m sos_notebook.install
+
 
 # jupyterlab interface configuration
 COPY --chown=${NB_USER}:users binder/jupyter-settings.json /opt/conda/share/jupyter/lab/settings/overrides.json
