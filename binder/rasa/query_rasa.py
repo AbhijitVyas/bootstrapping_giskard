@@ -6,6 +6,7 @@ import sys
 import os
 from scripts.preprocessors import preprocessing
 from scripts.postprocessings import postprocess
+from scripts.intents import Intent
 
 RASA_parse = {}
 out = widgets.Output()
@@ -35,14 +36,18 @@ def handle_submit(sender):
     output = final.print_params()
 
     RASA_parse['intent'] = intents
-    RASA_parse['source'] = output['source']
-    RASA_parse['destination'] = output['destination']
-    RASA_parse['substance'] = output['substance']
-    RASA_parse['amount'] = output['amount']
-    RASA_parse['units'] = output['units']
-    RASA_parse['motion'] = output['motion']
-    RASA_parse['action_verb'] = output['action_verb']
-    RASA_parse['goal'] = output['goal']
+    if intents == Intent.POURING:
+        RASA_parse['source'] = output['source']
+        RASA_parse['destination'] = output['destination']
+        RASA_parse['substance'] = output['substance']
+        RASA_parse['amount'] = output['amount']
+        RASA_parse['units'] = output['units']
+        RASA_parse['motion'] = output['motion']
+        RASA_parse['action_verb'] = output['action_verb']
+        RASA_parse['goal'] = output['goal']
+    elif intents == Intent.CUTTING:
+        RASA_parse['cutter'] = output['cutter']
+        RASA_parse['cuttie'] = output['cuttie']
 
     with out:
         print("Instruction Info: ", RASA_parse)

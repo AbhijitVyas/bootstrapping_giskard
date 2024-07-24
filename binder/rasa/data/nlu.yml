@@ -199,6 +199,20 @@ nlu:
     - make the jar to jerk for [1]{"entity": "amount", "role": "time"} [minute]{"entity": "amount", "role": "units"}.
 #    - add amount-time and units-secs/mins
 
+- intent: cut
+  examples: |
+    - Cut the [bread]{"entity": "cutable_obj", "role": "cuttie"} with the [knife]{"entity": "cutter_obj", "role": "cutter"}.
+    - Cut the [bread]{"entity": "cutable_obj", "role": "cuttie"}.
+    - Slice the bread]{"entity": "cutable_obj", "role": "cuttie"}.
+    - Cut an [apple]{"entity": "cutable_obj", "role": "cuttie"} with the [knife]{"entity": "cutter_obj", "role": "cutter"}.
+    - Cut an [apple]{"entity": "cutable_obj", "role": "cuttie"}.
+    - Quarter an [apple]{"entity": "cutable_obj", "role": "cuttie"}.
+    - Slice an [apple]{"entity": "cutable_obj", "role": "cuttie"}.
+    - Cut a [cucumber]{"entity": "cutable_obj", "role": "cuttie"} with the [knife]{"entity": "cutter_obj", "role": "cutter"}.
+    - Cut a [cucumber]{"entity": "cutable_obj", "role": "cuttie"}.
+    - Slice a [cucumber]{"entity": "cutable_obj", "role": "cuttie"}.
+    
+
 - lookup: stuff
   examples: |
     - rice
@@ -382,6 +396,19 @@ nlu:
     - mixer
     - saltshaker
     - scissor
+
+- lookup: cutter
+  examples: |
+    - knife
+    - blade
+    - scissor
+
+- lookup: cuttie
+  examples: |
+    - bread
+    - apple
+    - cucumber
+    - butter
 
 - synonym: spoon
   examples: |

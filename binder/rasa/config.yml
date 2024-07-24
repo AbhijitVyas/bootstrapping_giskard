@@ -41,13 +41,13 @@ pipeline:
   max_ngram: 5
 # Intent Classifiers (required features-> sklearn-dense,DIET-sparse/dense)
 - name: DIETClassifier
-  epochs: 200
+  epochs: 300
   hidden_layers_sizes: 
     text: [256,128]
   constrain_similarities: true
   use_masked_language_model: true
-  number_of_transformer_layers: 4
-  number_of_attention_heads: 8
+  number_of_transformer_layers: 8
+  number_of_attention_heads: 16
 #- name: SklearnIntentClassifier
 #  C: [1, 2, 5, 10, 20, 100]
 #  kernels: ["rbf", "linear"]
