@@ -159,9 +159,9 @@ def tilt(giskard: GiskardWrapper, gripper: GripperModel, angle: float, velocity:
     rotation_axis = gripper.rotation_axis
     goal_pose.pose.orientation = Quaternion(
         *quaternion_about_axis(angle, [rotation_axis.vector.x, rotation_axis.vector.y, rotation_axis.vector.z]))
-    giskard.motion_goals.add_cartesian_pose(goal_pose, gripper.eef_link, 'map')
-    giskard.motion_goals.add_limit_cartesian_velocity(tip_link=gripper.eef_link, root_link='map',
-                                                      max_angular_velocity=velocity)
+    giskard.motion_goals.add_cartesian_pose(goal_pose, gripper.eef_link, 'map', reference_angular_velocity=velocity)
+    # giskard.motion_goals.add_limit_cartesian_velocity(tip_link=gripper.eef_link, root_link='map',
+    #                                                   max_angular_velocity=velocity)
     giskard.add_default_end_motion_conditions()
     giskard.execute()
 
